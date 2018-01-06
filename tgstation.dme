@@ -1624,6 +1624,7 @@
 #include "code\orphaned procs\dbcore.dm"
 #include "code\orphaned procs\priority_announce.dm"
 #include "code\orphaned procs\statistics.dm"
+#include "code\white\ashtray.dm"
 #include "interface\interface.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
