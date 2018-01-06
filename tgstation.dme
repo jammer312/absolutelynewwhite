@@ -1549,6 +1549,7 @@
 #include "code\modules\spacepod\podshit.dm"
 #include "code\modules\spacepod\spacepod.dm"
 #include "code\modules\spacepod\spacepod_designs.dm"
+#include "code\modules\spacepod\spacepod_door.dm"
 #include "code\modules\spells\spell.dm"
 #include "code\modules\spells\spell_types\area_teleport.dm"
 #include "code\modules\spells\spell_types\barnyard.dm"

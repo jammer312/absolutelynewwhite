@@ -851,6 +851,7 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 
 	to_chat(usr, "<span class='warning'>You are not close to any pod doors.</span>")
 
+/*
 /obj/spacepod/verb/travel()
 	set name = "Travel"
 	set category = "Spacepod"
@@ -902,6 +903,9 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 
 	loc = locate(D.x, D.y+9, D.z) // Stick the pod just outside the ship's shield boundary
 
+параша с фтл билда привязалась
+*/
+
 /obj/spacepod/verb/fireWeapon()
 	set name = "Fire Pod Weapons"
 	set desc = "Fire the weapons."
@@ -937,7 +941,7 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 		return
 	lightsToggle()
 
-/obj/spacepod/proc/lightsToggle()
+/*/obj/spacepod/proc/lightsToggle()
 	lights = !lights
 	if(lights)
 		set_light(lights_power)
@@ -945,7 +949,7 @@ obj/spacepod/proc/add_equipment(mob/user, var/obj/item/device/spacepod_equipment
 		set_light(0)
 	to_chat(usr, "Lights toggled [lights ? "on" : "off"].")
 	for(var/mob/M in passengers)
-		to_chat(M, "Lights toggled [lights ? "on" : "off"].")
+		to_chat(M, "Lights toggled [lights ? "on" : "off"].")*/
 
 /obj/spacepod/verb/checkSeat()
 	set name = "Check under Seat"

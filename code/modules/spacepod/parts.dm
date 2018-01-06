@@ -82,7 +82,7 @@
 	set category = "Object"
 	set src in oview(1)
 	if(anchored)
-		user.visible_message(usr, "\The [src] is securely bolted!")
+		to_chat(usr, "\The [src] is securely bolted!")
 		return 0
 	src.dir = turn(src.dir, -90)
 	return 1

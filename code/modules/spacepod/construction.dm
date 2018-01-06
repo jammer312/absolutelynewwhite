@@ -203,5 +203,5 @@
 
 	spawn_result(mob/user as mob)
 		..()
-		SSblackbox.inc("spacepod_created",1)
+//		SSblackbox.inc("spacepod_created",1)
 		return
