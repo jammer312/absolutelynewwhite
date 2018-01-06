@@ -59,11 +59,11 @@
 		var/obj/item/stack/rods/R = O
 		var/list/linkedparts = find_square()
 		if(!linkedparts)
-			user.visible_message(user, "<span class='rose'>You cannot assemble a pod frame because you do not have the necessary assembly.</span>")
+			to_chat(user, "<span class='rose'>You cannot assemble a pod frame because you do not have the necessary assembly.</span>")
 			return
 		var/obj/structure/spacepod_frame/pod = new /obj/structure/spacepod_frame(src.loc)
 		pod.dir = src.dir
-		user.visible_message(user, "<span class='notice'>You strut the pod frame together.</span>")
+		to_chat(user, "<span class='notice'>You strut the pod frame together.</span>")
 		R.use(10)
 		for(var/obj/item/pod_parts/pod_frame/F in linkedparts)
 			if(1 == turn(F.dir, -F.link_angle)) //if the part links north during construction, as the bottom left part always does
@@ -72,7 +72,7 @@
 			qdel(F)
 		playsound(get_turf(src), 'sound/items/ratchet.ogg', 50, 1)
 	if(istype(O, /obj/item/weapon/wrench))
-		user.visible_message(user, "<span class='notice'>You [!anchored ? "secure \the [src] in place."  : "remove the securing bolts."]</span>")
+		to_chat(user, "<span class='notice'>You [!anchored ? "secure \the [src] in place."  : "remove the securing bolts."]</span>")
 		anchored = !anchored
 		density = anchored
 		playsound(get_turf(src), 'sound/items/ratchet.ogg', 50, 1)

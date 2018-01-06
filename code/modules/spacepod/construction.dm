@@ -1,4 +1,4 @@
-/obj/structure/spacepod_frame
+/obj/structure/spacepod_frame					//to_chat\((.+),(.+)\) на \1 << \2
 	density = 1
 	opacity = 0
 
@@ -61,7 +61,7 @@
 /////////////////////////////////
 /datum/construction/reversible2/pod
 	result = /obj/spacepod
-	var/base_icon="pod"
+	base_icon="pod"
 	//taskpath = /datum/job_objective/make_pod
 	steps = list(
 				// 1. Initial state
