@@ -1,4 +1,4 @@
-/obj/structure/spacepod_frame					//to_chat\((.+),(.+)\) на \1 << \2
+/obj/structure/spacepod_frame
 	density = 1
 	opacity = 0
 

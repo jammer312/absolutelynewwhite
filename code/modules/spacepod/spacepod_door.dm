@@ -1,4 +1,4 @@
-/obj/structure/spacepoddoor //бля лучше эту порашу не трогать, без нее не работает
+/obj/structure/spacepoddoor //бля лучше эту порашу не трогать, без нее не работало до того как я код верба открывания дверей закомментил, а что сейчас хз
 	name = "Podlock"
 	desc = "Why it no open!!!"
 	icon = 'icons/effects/beam.dmi'
