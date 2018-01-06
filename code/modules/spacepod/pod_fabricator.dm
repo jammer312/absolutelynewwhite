@@ -57,11 +57,12 @@
 	RefreshParts()
 
 	files = new /datum/research(src) //Setup the research data holder.
-	for(var/direction in GLOB.cardinals)
+/*	for(var/direction in GLOB.cardinals)
 		exit = get_step(src,direction)
 		if(!exit.density)
 			break
 		exit = loc
+*/
 
 /obj/item/weapon/circuitboard/machine/podfab
 	name = "Circuit board (Spacepod Fabricator)"

@@ -84,11 +84,9 @@
 		return check_step(used_atom,user)
 
 /mob/proc/put_in_any_hand_if_possible(obj/item/W as obj, del_on_fail = 0, disable_warning = 1, redraw_mob = 1)
-	if(equip_to_slot_if_possible(W, slot_hands, del_on_fail, disable_warning, redraw_mob))
+	if(equip_to_slot_if_possible(W, 4, del_on_fail, disable_warning, redraw_mob))
 		return 1
 	return 0
-
-GLOBAL_LIST_EMPTY(spacepods_list)
 
 /obj/item/projectile/proc/dumbfire(var/dir)
 	current = get_ranged_target_turf(src, dir, world.maxx)
