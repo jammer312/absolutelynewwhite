@@ -109,6 +109,7 @@ var/datum/subsystem/ticker/ticker
 				current_state = GAME_STATE_FINISHED
 				toggle_ooc(1) // Turn it on
 				declare_completion(force_ending)
+				showcredits()
 				spawn(50)
 					if(mode.station_was_nuked)
 						world.Reboot("Station destroyed by Nuclear Device.", "end_proper", "nuke")
