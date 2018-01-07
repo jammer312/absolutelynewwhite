@@ -1642,6 +1642,7 @@
 #include "code\white\ashtray.dm"
 #include "code\white\barrier.dm"
 #include "code\white\credits.dm"
+#include "code\white\multiaccounts_show.dm"
 #include "code\white\nanomed.dm"
 #include "interface\interface.dm"
 #include "interface\stylesheet.dm"
