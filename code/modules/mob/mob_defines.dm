@@ -20,8 +20,8 @@
 	*/
 	var/zone_selected = null
 
-	var/macro_default = "default"
-	var/macro_hotkeys = "hotkeys"
+	var/macro_default = "macro"
+	var/macro_hotkeys = "hotkeymode"
 
 	var/damageoverlaytemp = 0
 	var/computer_id = null
