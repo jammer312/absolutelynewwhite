@@ -238,6 +238,24 @@
 			return
 		if(!place(user, W) && !isnull(W))
 			attack_hand(user)
+		if(istype(W, /obj/item/device/multitool) && secure)
+			var/obj/item/device/multitool/multi = W
+			if(multi.in_use)
+				user << "<span class='warning'>Multitool is already in use.</span>"
+				return
+			multi.in_use = 1
+			var/i
+			for(i=0, i<6, i++)
+				user.visible_message("<span class='warning'>[user] trying to reset electronics.</span>",
+								 	 "<span class='warning'>Resetting electronics ([i]/6)...</span>")
+				if(!do_after(user,200,5,1,src)||opened)
+					multi.in_use=0
+					return
+			locked=!locked
+			src.update_icon()
+			multi.in_use=0
+			user.visible_message("<span class='warning'>[user] [locked?"closed":"opened"] closet with multitool.</span>",
+							 "<span class='warning'>You [locked?"enabled":"disabled"] the lock mechanism.</span>")
 
 /obj/structure/closet/proc/place(mob/user, obj/item/I)
 	if(!opened && secure)
