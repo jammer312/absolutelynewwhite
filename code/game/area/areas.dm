@@ -134,19 +134,19 @@
 
 /area/proc/firereset(obj/source)
 	for(var/area/RA in related)
-		if (RA.fire)
+		if (RA.fire && (SSshuttle.emergency.mode != SHUTTLE_CALL))
 			RA.fire = 0
 			RA.mouse_opacity = 0
 			RA.updateicon()
-			for(var/obj/machinery/door/firedoor/D in RA)
-				if(!D.blocked)
-					if(D.operating)
-						D.nextstate = OPEN
-					else if(D.density)
-						spawn(0)
-							D.open()
-			for(var/obj/machinery/firealarm/F in RA)
-				F.update_icon()
+	for(var/obj/machinery/door/firedoor/D in (var/area/RA in related))
+		if(!D.blocked)
+			if(D.operating)
+				D.nextstate = OPEN
+			else if(D.density)
+				spawn(0)
+					D.open()
+	for(var/obj/machinery/firealarm/F in (var/area/RA in related))
+		F.update_icon()
 
 	for (var/mob/living/silicon/aiPlayer in player_list)
 		aiPlayer.cancelAlarm("Fire", src, source)
@@ -180,6 +180,18 @@
 			//Cancel silicon alert after 1 minute
 			spawn(600)
 				SILICON.cancelAlarm("Burglar", src, trigger)
+
+/area/proc/fire_alarm_effect()
+	for(var/area/RA in related)
+		RA.fire = 1
+		RA.updateicon()
+		RA.mouse_opacity = 0
+
+/area/proc/reset_fire_alarm_effect()
+	for(var/area/RA in related)
+		RA.fire = 0
+		RA.updateicon()
+		RA.mouse_opacity = 0
 
 /area/proc/set_fire_alarm_effect()
 	fire = 1
