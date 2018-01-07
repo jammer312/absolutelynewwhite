@@ -931,6 +931,8 @@ var/list/teleportlocs = list()
 	name = "Hydroponics"
 	icon_state = "hydro"
 
+
+
 //Toxins
 
 /area/toxins/lab
@@ -1537,6 +1539,16 @@ var/list/teleportlocs = list()
 /area/awaycontent/a30
 	icon_state = "awaycontent30"
 
+
+//JOCTOPUS AREAS (dis for search fok u)
+
+/area/maintenance/prison
+	name = "Prison Shielded Room"
+	icon_state = "green"
+
+/area/security/infirmary
+	name = "Prison Wing Infirmary"
+	icon_state = "medbay"
 
 /////////////////////////////////////////////////////////////////////
 /*

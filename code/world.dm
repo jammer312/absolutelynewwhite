@@ -128,6 +128,7 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 #undef CHAT_PULLR
 
 /world/Reboot(var/reason, var/feedback_c, var/feedback_r, var/time)
+	world << "Round Statistics:\nПервый предсмертный шепот: <b>\"[lastbreath]\"</b>\nПервый эмоут: <b>\"[firstemote]\"</b>"
 	if (reason == 1) //special reboot, do none of the normal stuff
 		if (usr)
 			log_admin("[key_name(usr)] Has requested an immediate world restart via client side debugging tools")

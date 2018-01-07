@@ -43,6 +43,9 @@
 		message = copytext(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
 		message = Ellipsis(message, 10, 1)
 		whispers = "whispers in their final breath"
+		if(lastbreathes == 0)
+			lastbreath = "[message]"
+			lastbreathes += 1
 
 	message = treat_message(message)
 

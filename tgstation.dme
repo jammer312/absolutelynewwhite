@@ -13,6 +13,10 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "diskwriter.dm"
+#include "turntable.dm"
+#include "turntable_tracks.dm"
+#include "vending.dm"
 #include "_maps\__MAP_DEFINES.dm"
 #include "_maps\tgstation2.dm"
 #include "code\_compile_options.dm"
@@ -1634,8 +1638,11 @@
 #include "code\orphaned procs\dbcore.dm"
 #include "code\orphaned procs\priority_announce.dm"
 #include "code\orphaned procs\statistics.dm"
+#include "code\white\area_atmos.dm"
 #include "code\white\ashtray.dm"
+#include "code\white\barrier.dm"
 #include "code\white\credits.dm"
+#include "code\white\nanomed.dm"
 #include "interface\interface.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
