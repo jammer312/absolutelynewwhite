@@ -436,7 +436,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 				dat += cart
 
 	dat += "</body></html>"
-	user << browse(dat, "window=pda;size=400x444;border=1;can_resize=1;can_close=0;can_minimize=0")
+	user << browse(resanitize_russian(dat, 1), "window=pda;size=400x444;border=1;can_resize=1;can_close=0;can_minimize=0")
 	onclose(user, "pda", src)
 
 /obj/item/device/pda/Topic(href, href_list)
@@ -1112,7 +1112,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		return //won't work if dead
 	if(!isnull(aiPDA))
 		var/HTML = "<html><head><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"
-		user << browse(HTML, "window=log;size=400x444;border=1;can_resize=1;can_close=1;can_minimize=0")
+		user << browse(sanitize_russian(HTML, 1), "window=log;size=400x444;border=1;can_resize=1;can_close=1;can_minimize=0")
 	else
 		user << "You do not have a PDA. You should make an issue report about this."
 

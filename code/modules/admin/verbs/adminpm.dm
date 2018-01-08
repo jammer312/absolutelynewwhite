@@ -92,6 +92,8 @@
 	if (src.handle_spam_prevention(msg,MUTE_ADMINHELP))
 		return
 
+	msg = sanitize_russian(msg)
+
 	//clean the message if it's not sent by a high-rank admin
 	if(!check_rights(R_SERVER|R_DEBUG,0))
 		msg = sanitize(copytext(msg,1,MAX_MESSAGE_LEN))

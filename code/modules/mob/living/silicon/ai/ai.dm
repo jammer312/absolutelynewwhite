@@ -405,7 +405,7 @@ var/list/ai_list = list()
 #endif
 	if(href_list["show_paper"])
 		if(last_paper_seen)
-			src << browse(last_paper_seen, "window=show_paper")
+			src << browse(sanitize_russian(last_paper_seen, 1), "window=show_paper")
 	//Carn: holopad requests
 	if(href_list["jumptoholopad"])
 		var/obj/machinery/hologram/holopad/H = locate(href_list["jumptoholopad"])
