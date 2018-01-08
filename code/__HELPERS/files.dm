@@ -2,12 +2,12 @@
 //returns text as a string if these conditions are met
 /proc/return_file_text(filename)
 	if(fexists(filename) == 0)
-		throw EXCEPTION("return_file_text(): File not found")
+		throw EXCEPTION("return_file_text(): File \[[filename]\] not found")
 		return
 
 	var/text = file2text(filename)
 	if(!text)
-		throw EXCEPTION("return_file_text(): File empty")
+		throw EXCEPTION("return_file_text(): File \[[filename]\] is empty")
 		return
 
 	return text
