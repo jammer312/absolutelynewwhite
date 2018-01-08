@@ -9,6 +9,7 @@
 	idle_power_usage = 20
 	active_power_usage = 5000
 	req_access = list(access_robotics)
+	var/production_type = MECHFAB
 	var/time_coeff = 1
 	var/resource_coeff = 1
 	var/time_coeff_tech = 1
@@ -113,7 +114,7 @@
 /obj/machinery/mecha_part_fabricator/proc/output_parts_list(set_name)
 	var/output = ""
 	for(var/datum/design/D in files.known_designs)
-		if(D.build_type & MECHFAB)
+		if(D.build_type & production_type)
 			if(!(set_name in D.category))
 				continue
 			var/resources_available = check_resources(D)
@@ -186,7 +187,7 @@
 /obj/machinery/mecha_part_fabricator/proc/add_part_set_to_queue(set_name)
 	if(set_name in part_sets)
 		for(var/datum/design/D in files.known_designs)
-			if(D.build_type & MECHFAB)
+			if(D.build_type & production_type)
 				if(set_name in D.category)
 					add_to_queue(D)
 
@@ -374,7 +375,7 @@
 	if(href_list["part"])
 		var/T = filter.getStr("part")
 		for(var/datum/design/D in files.known_designs)
-			if(D.build_type & MECHFAB)
+			if(D.build_type & production_type)
 				if(D.id == T)
 					if(!processing_queue)
 						build_part(D)
@@ -384,7 +385,7 @@
 	if(href_list["add_to_queue"])
 		var/T = filter.getStr("add_to_queue")
 		for(var/datum/design/D in files.known_designs)
-			if(D.build_type & MECHFAB)
+			if(D.build_type & production_type)
 				if(D.id == T)
 					add_to_queue(D)
 					break
@@ -421,7 +422,7 @@
 	if(href_list["part_desc"])
 		var/T = filter.getStr("part_desc")
 		for(var/datum/design/D in files.known_designs)
-			if(D.build_type & MECHFAB)
+			if(D.build_type & production_type)
 				if(D.id == T)
 					var/obj/part = D.build_path
 					temp = {"<h1>[initial(part.name)] description:</h1>

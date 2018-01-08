@@ -107,7 +107,7 @@
 
 	var/movable = FALSE
 
-/obj/machinery/portable_atmospherics/scrubber/huge/movable
+/obj/machinery/portable_atmospherics/scrubber/huge/stationary
 	movable = TRUE
 
 /obj/machinery/portable_atmospherics/scrubber/huge/update_icon()

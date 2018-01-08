@@ -20,3 +20,10 @@ var/map_ready = 0
 	However, using lots of spawn() has a severe performance impact, and often results in spaghetti-code
 	map_ready will be set to 1 when world/New() is called (which happens just after the map is instanced)
 */
+
+// Statistics there.
+
+var/lastbreathes = 0
+var/lastbreath = ""
+var/emotecounts = 0
+var/firstemote = ""

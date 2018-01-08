@@ -127,6 +127,10 @@
 	else
 		SSshuttle.emergencyLastCallLoc = null
 
+	for(var/area/A in world)
+		if(istype(A, /area/hallway))
+			A.fire_alarm_effect()
+
 	priority_announce("The emergency shuttle has been called. [redAlert ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [timeLeft(600)] minutes.[reason][SSshuttle.emergencyLastCallLoc ? "\n\nCall signal traced. Results can be viewed on any communications console." : "" ]", null, 'sound/AI/shuttlecalled.ogg', "Priority")
 
 /obj/docking_port/mobile/emergency/cancel(area/signalOrigin)
@@ -140,6 +144,11 @@
 		SSshuttle.emergencyLastCallLoc = signalOrigin
 	else
 		SSshuttle.emergencyLastCallLoc = null
+
+	for(var/area/A in world)
+		if(istype(A, /area/hallway))
+			A.reset_fire_alarm_effect()
+
 	priority_announce("The emergency shuttle has been recalled.[SSshuttle.emergencyLastCallLoc ? " Recall signal traced. Results can be viewed on any communications console." : "" ]", null, 'sound/AI/shuttlerecalled.ogg', "Priority")
 
 /*
