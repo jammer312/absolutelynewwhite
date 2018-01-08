@@ -1213,3 +1213,6 @@ proc/shift_proximity(atom/checker, atom/A, range, atom/B, newrange)
 		var/turf/F = E
 		F.proximity_checkers |= checker
 	return 1
+
+/proc/stack_trace(msg)
+	CRASH(msg)
