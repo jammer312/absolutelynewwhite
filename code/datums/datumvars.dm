@@ -406,7 +406,7 @@ body
 				html += "</ul>"
 
 	else
-		html += "[name] = <span class='value'>[rhtml_encode(value)]</span>"
+		html += "[name] = <span class='value'>[rhtml_encode("[value]")]</span>"
 
 	html += "</li>"
 
