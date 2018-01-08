@@ -81,6 +81,10 @@
 	if(next_move > world.time) // in the year 2000...
 		return
 
+	if(istype(loc, /obj/pod))
+		var/obj/pod/pod = loc
+		return pod.OnClick(A, src, modifiers)
+
 	if(istype(loc,/obj/mecha))
 		var/obj/mecha/M = loc
 		return M.click_action(A,src)
