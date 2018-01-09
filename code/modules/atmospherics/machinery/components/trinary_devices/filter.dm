@@ -85,7 +85,8 @@
 			return
 		var/datum/gas_mixture/filtered_out = new
 		filtered_out.temperature = removed.temperature
-
+		if(filter_type && removed.gases.len < filter_type)
+			removed.gases.len = filter_type
 		if(filter_type && removed.gases[filter_type])
 			filtered_out.assert_gas(filter_type)
 			filtered_out.gases[filter_type][MOLES] = removed.gases[filter_type][MOLES]
