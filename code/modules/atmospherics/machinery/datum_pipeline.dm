@@ -213,6 +213,8 @@ var/pipenetwarnings = 10
 
 	for(var/i in GL)
 		var/datum/gas_mixture/G = i
+		if(!istype(G))
+			continue
 		total_gas_mixture.volume += G.volume
 
 		total_gas_mixture.merge(G)
