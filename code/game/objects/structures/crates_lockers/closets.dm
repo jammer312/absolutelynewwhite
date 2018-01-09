@@ -244,16 +244,15 @@
 				user << "<span class='warning'>Multitool is already in use.</span>"
 				return
 			multi.in_use = 1
-			var/i
-			for(i=0, i<6, i++)
+			for(var/i=1, i<7, i++)
 				user.visible_message("<span class='warning'>[user] trying to reset electronics.</span>",
 								 	 "<span class='warning'>Resetting electronics ([i]/6)...</span>")
-				if(!do_after(user,200,5,1,src)||opened)
+				if(!do_after(user,200,1,src,1)||opened)
 					multi.in_use=0
 					return
-			locked=!locked
+			locked = 0
 			src.update_icon()
-			multi.in_use=0
+			multi.in_use = 0
 			user.visible_message("<span class='warning'>[user] [locked?"closed":"opened"] closet with multitool.</span>",
 							 "<span class='warning'>You [locked?"enabled":"disabled"] the lock mechanism.</span>")
 
